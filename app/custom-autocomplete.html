@@ -1,0 +1,9 @@
+<mat-form-field>
+	<input [required]="required" matInput placeholder="Joke" [matAutocomplete]="auto"  name="chepalle" #joke="ngModel" [(ngModel)]="currentJoke" (ngModelChange)="doFilter()">
+	</mat-form-field>
+
+	<mat-autocomplete #auto="matAutocomplete" (optionSelected)='doChange($event.option.value)'>
+		<mat-option *ngFor="let joke of jokes | async" [value]="joke">
+			{{joke}}
+		</mat-option>
+	</mat-autocomplete>

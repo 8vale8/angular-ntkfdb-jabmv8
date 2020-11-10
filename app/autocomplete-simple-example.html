@@ -1,0 +1,19 @@
+<pre>Form Values: {{f.value | json}}</pre>
+
+<form #f="ngForm">
+	<!-- <mat-form-field>
+		<input matInput [(ngModel)]="input" name="input"/>
+	</mat-form-field> -->
+
+	<custom-autocomplete name="culo" ngModel required="true"></custom-autocomplete>
+
+	<custom-autocomplete *ngIf="visible" name="culo2" ngModel required="true"></custom-autocomplete>
+
+
+	<button type="submit" [disabled]="!f.valid">Submit</button>
+</form>
+<button (click)="toggleVisible()">Visible</button>
+
+<!-- Copyright 2019 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
